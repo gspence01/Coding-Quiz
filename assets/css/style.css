@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    background-color: #471f91a6;
+    color: rgb(226, 222, 233);
+  }
+  
+
+  h1 {
+    font-size: 200%;
+  }
+  
+  
+  h2 {
+    font-size: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#240a53a6;
+  }
+
+  
+  main {
+    display: flex;
+    flex: 1 1 0;
+    max-width: 1200px;
+    margin: 2% auto;
+  }
+  
+  section {
+    flex: 1 1 0;
+    padding-right: 5%;
+  }
+  
+  article {
+    border-bottom: 1px solid #d8a47f;
+  }
+
+
+  input,
+  button {
+    width: 100%;
+    margin: 2% 0;
+    padding: 1%;
+  }
+  
+
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    background-color: #471f91a6;
+    color: rgb(226, 222, 233);
+  }
+  
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+/*nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+button {
+  width: 250px;
+  margin: 0 .5%;
+  font-size: 200%;
+  color: #13293d;
+  background-color: #fff;
+  border: 3px solid #13293d;
+}
+
+/* The user's cursor is positioned over the element 
+button:hover {
+  background-color: #772014;
+  color: #fff;
+}
+
+/* The user is actively pressing down on the element 
+button:active {
+  font-size: 180%;
+  box-shadow: 0 0 10px #000 inset;
+}
+
+/* The element is currently in focus, either by tabbing to or clicking on it 
+button:focus {
+  outline: none;
+  border-color: #8ac4ff;
+}
+*
