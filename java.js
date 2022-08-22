@@ -1,4 +1,19 @@
-//object for the questions to live in
+//these are elements we have already created on the screen through html
+let timer = document.querySelector('#time');
+let startBtn = document.querySelector('#start');
+let container = document.querySelector('#container')
+
+//these are elements created through JS
+let question = document.createElement('div');
+let options = document.createElement('div');
+
+//we want an event listener at the top to determine when the start button has been clicked. We want to listen for click and then employ the callback function "start game"
+startBtn.addEventListener('click', startGame)
+
+question.classList.add('question');
+options.classList.add('options');
+
+//object for the questions to live in. You can call on these with an iteration
 let questions = [
     //Question 1
     {
@@ -94,4 +109,54 @@ let questions = [
     }
 
 ]
+
+let questionNumber = 0;
+let time = 150;
+let correctAnswers = 0;
+
+//function that starts the game. WHat we want is the question and options to show, the score, and the timer.
+function startGame(){
+    container.innerHTML = '';
+    container.append(question);
+    container.append(options);
+    addQuestions();
+}
+
+function addQuestions(){
+    question.innerHTML = questions[questionNumber].question;
+    options.innerHTML = '';
+
+    //this will iterate through the questions in the array we made
+    for(let i = 0; i<questions.length; i++){
+        var answerBtn = document.createElement('button');
+        options.append(answerBtn);
+        answerBtn.setAttribute('data-value', questions[questionNumber].answers[i].value);
+        answerBtn.textContent = questions[questionNumber].answers[i].option;
+        answerBtn.addEventListener('click',onward);
+    }
+
+    function onward(){
+        questionNumber++;
+        if(this.attributes[1].value){
+            if (questionNumber>=questions.length){
+                endGame();
+            }
+            else{
+                addQuestions();
+            }
+        }
+
+        else{
+            if (questionNumber>=questions.length){
+                endGame();
+            }
+            else{
+                addQuestions();
+            }
+        }
+        
+    }
+}
+
+
 
